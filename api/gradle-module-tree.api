@@ -1,0 +1,11 @@
+public abstract interface class dev/g000sha256/gradle_module_tree/IncludesBuilder {
+	public abstract fun directory (Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
+	public abstract fun module (Ljava/lang/String;)V
+}
+
+public final class dev/g000sha256/gradle_module_tree/ModuleTreePlugin : org/gradle/api/Plugin {
+	public fun <init> ()V
+	public synthetic fun apply (Ljava/lang/Object;)V
+	public fun apply (Lorg/gradle/api/initialization/Settings;)V
+}
+
