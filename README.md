@@ -11,17 +11,11 @@ A Gradle settings plugin that provides a hierarchical DSL for organizing and aut
 - 🔗 Automatic module inclusion in Gradle
 - ⚡️ Type-safe project accessors support
 
-## Gradle setup
+## Setup
 
-Add this to your `settings.gradle.kts` file:
+Add the plugin to your `settings.gradle.kts` file:
 
 ```kotlin
-pluginManagement {
-    repositories {
-        mavenCentral()
-    }
-}
-
 plugins {
     id(id = "dev.g000sha256.gradle-module-tree") version "0.0.1"
 }
@@ -29,7 +23,8 @@ plugins {
 
 ## Usage
 
-Define your directories and modules. They will be created and included after syncing the project.
+Define your directories and modules in the `settings.gradle.kts` file. They will be created and included after syncing
+the project:
 
 ```kotlin
 buildIncludes {
@@ -58,7 +53,30 @@ buildIncludes {
 }
 ```
 
-Then you can reference modules in dependencies using type-safe accessors:
+This creates the following project structure:
+
+```text
+project
+├── app
+├── core
+│   ├── architecture
+│   ├── di
+│   ├── resources
+│   └── ui
+├── features
+│   ├── main
+│   │   ├── data
+│   │   ├── domain
+│   │   └── presentation
+│   └── profile
+│       ├── data
+│       ├── domain
+│       └── presentation
+└── utils
+    └── coroutines
+```
+
+Then reference modules in dependencies using type-safe accessors:
 
 ```kotlin
 dependencies {
