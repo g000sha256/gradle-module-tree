@@ -1,14 +1,17 @@
 [versions]
+annotations = "26.0.2"
+binaryCompatibilityValidator = "0.18.1"
 kotlin = "2.2.10"
-
-[libraries]
-libs-jetBrains-annotations = { module = "org.jetbrains:annotations", version = "26.0.2" }
-libs-jetBrains-kotlin = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
+sonatypeMavenCentral = "1.0.0"
 
 [plugins]
-g000sha256-sonatypeMavenCentral = { id = "dev.g000sha256.sonatype-maven-central", version = "1.0.0" }
+g000sha256-sonatypeMavenCentral = { id = "dev.g000sha256.sonatype-maven-central", version.ref = "sonatypeMavenCentral" }
 gradle-mavenPublish = { id = "org.gradle.maven-publish" }
 gradle-plugin = { id = "org.gradle.java-gradle-plugin" }
 gradle-signing = { id = "org.gradle.signing" }
-jetBrains-binaryCompatibilityValidator = { id = "org.jetbrains.kotlinx.binary-compatibility-validator", version = "0.18.1" }
-jetBrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+jetBrains-binaryCompatibilityValidator = { id = "org.jetbrains.kotlinx.binary-compatibility-validator", version.ref = "binaryCompatibilityValidator" }
+jetBrains-kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+
+[libraries]
+libraries-jetBrains-annotations = { module = "org.jetbrains:annotations", version.ref = "annotations" }
+libraries-jetBrains-kotlin = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }

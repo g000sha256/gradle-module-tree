@@ -9,7 +9,7 @@ plugins {
     alias(notation = catalog.plugins.gradle.plugin)
     alias(notation = catalog.plugins.gradle.signing)
     alias(notation = catalog.plugins.jetBrains.binaryCompatibilityValidator)
-    alias(notation = catalog.plugins.jetBrains.kotlin.jvm)
+    alias(notation = catalog.plugins.jetBrains.kotlin)
 }
 
 java {
@@ -30,8 +30,8 @@ kotlin {
 }
 
 dependencies {
-    implementation(dependencyNotation = catalog.libs.jetBrains.annotations)
-    implementation(dependencyNotation = catalog.libs.jetBrains.kotlin)
+    implementation(dependencyNotation = catalog.libraries.jetBrains.annotations)
+    implementation(dependencyNotation = catalog.libraries.jetBrains.kotlin)
 
     val gradleApiDependency = gradleApi()
     implementation(dependencyNotation = gradleApiDependency)
