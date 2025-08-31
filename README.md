@@ -9,7 +9,7 @@ A Gradle settings plugin that provides a hierarchical DSL for organizing and aut
 - 🌳 Hierarchical DSL for module organization
 - 📁 Automatic directory creation
 - 🔗 Automatic module inclusion in Gradle
-- ⚡️ Type-safe project accessors support
+- ⚡️ Type-safe project accessors support (automatically enabled)
 
 ## Setup
 
@@ -85,3 +85,6 @@ dependencies {
     implementation(dependencyNotation = projects.utils.coroutines)
 }
 ```
+
+> [!WARNING]
+> This plugin automatically enables the incubating Gradle `TYPESAFE_PROJECT_ACCESSORS` feature.
