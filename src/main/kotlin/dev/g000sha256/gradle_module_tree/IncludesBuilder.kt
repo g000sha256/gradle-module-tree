@@ -24,7 +24,7 @@ package dev.g000sha256.gradle_module_tree
  *
  * Example usage in `settings.gradle.kts`:
  * ```kotlin
- * buildIncludes {
+ * include {
  *     module("app")
  *     directory("core") {
  *         module("ui")

@@ -27,7 +27,7 @@ Define your directories and modules in the `settings.gradle.kts` file. They will
 the project:
 
 ```kotlin
-buildIncludes {
+include {
     module(name = "app")
     directory(name = "core") {
         module(name = "architecture")
