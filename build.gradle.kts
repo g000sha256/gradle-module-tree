@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 group = "dev.g000sha256"
-version = "1.0.0"
+version = "1.1.0"
 
 plugins {
     alias(notation = catalog.plugins.g000sha256.sonatypeMavenCentral)
