@@ -1,13 +1,13 @@
 [versions]
 annotations = "26.0.2"
 binaryCompatibilityValidator = "0.18.1"
-kotlin = "2.2.10"
-sonatypeMavenCentral = "1.0.0"
+kotlin = "2.2.20"
+sonatypeMavenCentral = "1.1.0"
 
 [plugins]
 g000sha256-sonatypeMavenCentral = { id = "dev.g000sha256.sonatype-maven-central", version.ref = "sonatypeMavenCentral" }
+gradle-javaGradlePlugin = { id = "org.gradle.java-gradle-plugin" }
 gradle-mavenPublish = { id = "org.gradle.maven-publish" }
-gradle-plugin = { id = "org.gradle.java-gradle-plugin" }
 gradle-signing = { id = "org.gradle.signing" }
 jetBrains-binaryCompatibilityValidator = { id = "org.jetbrains.kotlinx.binary-compatibility-validator", version.ref = "binaryCompatibilityValidator" }
 jetBrains-kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }

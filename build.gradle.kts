@@ -5,8 +5,8 @@ version = "1.0.0"
 
 plugins {
     alias(notation = catalog.plugins.g000sha256.sonatypeMavenCentral)
+    alias(notation = catalog.plugins.gradle.javaGradlePlugin)
     alias(notation = catalog.plugins.gradle.mavenPublish)
-    alias(notation = catalog.plugins.gradle.plugin)
     alias(notation = catalog.plugins.gradle.signing)
     alias(notation = catalog.plugins.jetBrains.binaryCompatibilityValidator)
     alias(notation = catalog.plugins.jetBrains.kotlin)
@@ -59,7 +59,7 @@ publishing {
                     "pluginMaven" -> {
                         name = "Gradle Module Tree plugin"
                         description = "A Gradle settings plugin that provides a hierarchical DSL for organizing and " +
-                                "auto-creating multi-module project structures"
+                            "auto-creating multi-module project structures"
                     }
                     else -> error(message = "Unknown publication")
                 }
