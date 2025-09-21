@@ -2,7 +2,7 @@
 annotations = "26.0.2"
 binaryCompatibilityValidator = "0.18.1"
 kotlin = "2.2.20"
-sonatypeMavenCentral = "1.1.0"
+sonatypeMavenCentral = "1.1.1"
 
 [plugins]
 g000sha256-sonatypeMavenCentral = { id = "dev.g000sha256.sonatype-maven-central", version.ref = "sonatypeMavenCentral" }
