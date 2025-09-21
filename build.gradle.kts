@@ -49,20 +49,10 @@ gradlePlugin {
 publishing {
     publications {
         withType<MavenPublication> {
-            val mavenPublication = this
             pom {
-                when (mavenPublication.name) {
-                    "releasePluginMarkerMaven" -> {
-                        name = "Gradle Module Tree plugin marker"
-                        description = "Plugin marker artifact for the Gradle Module Tree plugin"
-                    }
-                    "pluginMaven" -> {
-                        name = "Gradle Module Tree plugin"
-                        description = "A Gradle settings plugin that provides a hierarchical DSL for organizing and " +
-                            "auto-creating multi-module project structures"
-                    }
-                    else -> error(message = "Unknown publication")
-                }
+                name = "Gradle Module Tree plugin"
+                description = "A Gradle settings plugin that provides a hierarchical DSL " +
+                    "for organizing and auto-creating multi-module project structures"
 
                 url = "https://github.com/g000sha256/gradle-module-tree"
                 inceptionYear = "2025"
@@ -85,8 +75,8 @@ publishing {
 
                 scm {
                     connection = "scm:git:git://github.com/g000sha256/gradle-module-tree.git"
-                    developerConnection = "scm:git:ssh://github.com:g000sha256/gradle-module-tree.git"
-                    url = "https://github.com/g000sha256/gradle-module-tree/tree/master"
+                    developerConnection = "scm:git:git@github.com:g000sha256/gradle-module-tree.git"
+                    url = "https://github.com/g000sha256/gradle-module-tree"
                 }
 
                 issueManagement {
