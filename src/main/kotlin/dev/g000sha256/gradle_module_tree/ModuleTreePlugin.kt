@@ -69,9 +69,9 @@ public class ModuleTreePlugin : Plugin<Settings> {
 //        require(name.matches(Regex("[a-zA-Z0-9_-]+"))) { "Invalid characters in name: $name" }
 //    }
 
-    private fun createDirectory(directories: List<String>) {
+    private fun Settings.createDirectory(directories: List<String>) {
         val path = directories.joinToString(separator = "/")
-        val file = File(path)
+        val file = File(rootDir, path)
         file.mkdirs()
     }
 
