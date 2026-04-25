@@ -36,20 +36,20 @@ public class ModuleTreePlugin : Plugin<Settings> {
         return object : IncludesBuilder {
 
             override fun directory(name: String, builder: IncludesBuilder.() -> Unit) {
-                val directories = directories + name
+                val nestedDirectories = directories + name
 
-                createDirectory(directories = directories)
+                createDirectory(directories = nestedDirectories)
 
-                val includesBuilder = createIncludeBuilder(directories = directories)
+                val includesBuilder = createIncludeBuilder(directories = nestedDirectories)
                 includesBuilder.builder()
             }
 
             override fun module(name: String) {
-                val directories = directories + name
+                val nestedDirectories = directories + name
 
-                createDirectory(directories = directories)
+                createDirectory(directories = nestedDirectories)
 
-                val path = directories.joinToString(separator = ":", prefix = ":")
+                val path = nestedDirectories.joinToString(separator = ":", prefix = ":")
                 include(path)
             }
 
