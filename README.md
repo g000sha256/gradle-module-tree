@@ -4,12 +4,12 @@
 
 A Gradle settings plugin that provides a hierarchical DSL for organizing and auto-creating multi-module project structures.
 
-### Features
+## Features
 
 - 🌳 Hierarchical DSL for module organization
 - 📁 Automatic directory creation
 - 🔗 Automatic module inclusion in Gradle
-- ⚡️ Type-safe project accessors support (automatically enabled)
+- ⚡️ Support for type-safe project accessors (enabled automatically)
 
 ## Setup
 
