@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-
 group = "dev.g000sha256"
 version = "1.1.1"
 
@@ -13,18 +11,15 @@ plugins {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
-
     withJavadocJar()
     withSourcesJar()
 }
 
 kotlin {
     explicitApi()
+    jvmToolchain(jdkVersion = 11)
 
     compilerOptions {
-        jvmTarget = JvmTarget.JVM_11
         moduleName = "dev.g000sha256.gradle_module_tree"
     }
 }
