@@ -20,19 +20,19 @@ package dev.g000sha256.gradle_module_tree
  * A DSL builder for defining hierarchical module structures in Gradle multi-module projects.
  *
  * This interface provides methods to define modules and directories in a tree-like structure,
- * automatically creating the physical directories and including modules in the Gradle build.
+ * automatically creating the directories and including modules in the Gradle build.
  *
  * Example usage in `settings.gradle.kts`:
  * ```kotlin
  * include {
- *     module("app")
- *     directory("core") {
- *         module("ui")
- *         module("util")
+ *     module(name = "app")
+ *     directory(name = "core") {
+ *         module(name = "ui")
+ *         module(name = "util")
  *     }
- *     directory("feature") {
- *         module("profile")
- *         module("settings")
+ *     directory(name = "feature") {
+ *         module(name = "home")
+ *         module(name = "profile")
  *     }
  * }
  * ```
@@ -40,10 +40,10 @@ package dev.g000sha256.gradle_module_tree
 public interface IncludesBuilder {
 
     /**
-     * Creates a directory and applies the given builder block to define nested modules and directories.
+     * Creates a directory and applies the given builder block to define submodules and subdirectories.
      *
-     * This method creates a physical directory with the given name and provides
-     * a nested scope for defining sub-modules and sub-directories within it.
+     * This method creates a directory with the given name and provides
+     * a nested scope for defining submodules and subdirectories within it.
      *
      * @param name the name of the directory to create
      * @param builder a lambda that defines the contents of this directory
@@ -53,8 +53,8 @@ public interface IncludesBuilder {
     /**
      * Creates a Gradle module with the given name.
      *
-     * This method creates a physical directory for the module and includes it in the
-     * Gradle build using the appropriate project path syntax (e.g., `:core:ui`).
+     * This method creates a directory for the module and includes it in the
+     * Gradle build using the project path syntax (e.g., `:core:ui`).
      *
      * @param name the name of the module to create and include
      */
