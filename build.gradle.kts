@@ -68,7 +68,7 @@ publishing {
                     developer {
                         id = "g000sha256"
                         name = "Georgii Ippolitov"
-                        email = "detmmpmznb@g000sha256.dev"
+                        email = "github@g000sha256.dev"
                         url = "https://github.com/g000sha256"
                     }
                 }
