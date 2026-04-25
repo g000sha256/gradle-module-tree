@@ -74,5 +74,4 @@ public class ModuleTreePlugin : Plugin<Settings> {
         val file = File(rootDir, path)
         file.mkdirs()
     }
-
 }
