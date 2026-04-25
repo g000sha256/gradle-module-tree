@@ -20,6 +20,7 @@ kotlin {
     jvmToolchain(jdkVersion = 11)
 
     compilerOptions {
+        allWarningsAsErrors.set(true)
         moduleName = "dev.g000sha256.gradle_module_tree"
     }
 }
