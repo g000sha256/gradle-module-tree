@@ -16,7 +16,7 @@ Add the plugin to your `settings.gradle.kts` file:
 
 ```kotlin
 plugins {
-    id(id = "dev.g000sha256.gradle-module-tree") version "1.1.1"
+    id(id = "dev.g000sha256.gradle-module-tree") version "2.0.0"
 }
 ```
 
