@@ -9,7 +9,6 @@ A Gradle settings plugin that provides a hierarchical DSL for organizing and aut
 - 🌳 Hierarchical DSL for module organization
 - 📁 Automatic directory creation
 - 🔗 Automatic module inclusion in Gradle
-- ⚡️ Support for type-safe project accessors (enabled automatically)
 
 ## Setup
 
@@ -76,7 +75,25 @@ project
     └── coroutines
 ```
 
-Then reference modules in dependencies using type-safe accessors:
+Then reference modules in dependencies:
+
+```kotlin
+dependencies {
+    implementation(dependencyNotation = project(path = ":core:architecture"))
+    implementation(dependencyNotation = project(path = ":core:resources"))
+    implementation(dependencyNotation = project(path = ":utils:coroutines"))
+}
+```
+
+### Type-safe project accessors
+
+To use Gradle's incubating type-safe project accessors, enable them in your `settings.gradle.kts`:
+
+```kotlin
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+```
+
+Then reference modules using the `projects.*` accessor:
 
 ```kotlin
 dependencies {
@@ -85,6 +102,3 @@ dependencies {
     implementation(dependencyNotation = projects.utils.coroutines)
 }
 ```
-
-> [!WARNING]
-> This plugin automatically enables the incubating Gradle `TYPESAFE_PROJECT_ACCESSORS` feature.

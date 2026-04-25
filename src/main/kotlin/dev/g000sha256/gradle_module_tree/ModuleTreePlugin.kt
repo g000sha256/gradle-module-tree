@@ -23,8 +23,6 @@ import org.gradle.api.initialization.Settings
 public class ModuleTreePlugin : Plugin<Settings> {
 
     override fun apply(target: Settings) {
-        target.enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
-
         target.extensions.add(
             IncludesBuilder::class.java,
             "include",
