@@ -25,39 +25,11 @@ public class ModuleTreePlugin : Plugin<Settings> {
     override fun apply(target: Settings) {
         target.enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
-        val includesBuilder = target.createIncludeBuilder()
-
-        target.extensions.add(
-            IncludesBuilder::class.java,
-            "buildIncludes",
-            createDeprecatedIncludeBuilder(includesBuilder = includesBuilder),
-        )
-
         target.extensions.add(
             IncludesBuilder::class.java,
             "include",
-            includesBuilder,
+            target.createIncludeBuilder(),
         )
-    }
-
-    private fun createDeprecatedIncludeBuilder(includesBuilder: IncludesBuilder): IncludesBuilder {
-        return object : IncludesBuilder {
-
-            override fun directory(name: String, builder: IncludesBuilder.() -> Unit) {
-                printWarning()
-                includesBuilder.directory(name = name, builder = builder)
-            }
-
-            override fun module(name: String) {
-                printWarning()
-                includesBuilder.module(name = name)
-            }
-
-            private fun printWarning() {
-                println(message = "Warning: 'buildIncludes' is deprecated and will be removed in future versions. Use 'include' instead.")
-            }
-
-        }
     }
 
     private fun Settings.createIncludeBuilder(
