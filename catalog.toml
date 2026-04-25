@@ -1,6 +1,6 @@
 [versions]
 binaryCompatibilityValidator = "0.18.1"
-kotlin = "2.2.20"
+kotlin = "2.3.21"
 sonatypeMavenCentral = "1.1.1"
 
 [plugins]
