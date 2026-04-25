@@ -1,3 +1,5 @@
+rootProject.name = "gradle-module-tree"
+
 dependencyResolutionManagement {
     @Suppress("UnstableApiUsage")
     repositories {
