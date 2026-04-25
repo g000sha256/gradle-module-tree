@@ -25,11 +25,9 @@ kotlin {
 }
 
 dependencies {
-    implementation(dependencyNotation = catalog.libraries.jetBrains.annotations)
-    implementation(dependencyNotation = catalog.libraries.jetBrains.kotlin)
-
-    val gradleApiDependency = gradleApi()
-    implementation(dependencyNotation = gradleApiDependency)
+    implementation(
+        dependencyNotation = gradleApi(),
+    )
 }
 
 gradlePlugin {
