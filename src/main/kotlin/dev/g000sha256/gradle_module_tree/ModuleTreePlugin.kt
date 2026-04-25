@@ -52,22 +52,8 @@ public class ModuleTreePlugin : Plugin<Settings> {
                 val path = nestedDirectories.joinToString(separator = ":", prefix = ":")
                 include(path)
             }
-
-//            private fun moduleIf(name: String, condition: () -> Boolean) {
-//                val createModule = condition()
-//                if (createModule) {
-//                    module(name)
-//                }
-//            }
-
         }
     }
-
-//    private fun validateName(name: String) {
-//        require(name.isNotBlank()) { "Module/directory name cannot be blank" }
-//        require(!name.contains(":")) { "Name cannot contain ':' character: $name" }
-//        require(name.matches(Regex("[a-zA-Z0-9_-]+"))) { "Invalid characters in name: $name" }
-//    }
 
     private fun Settings.createDirectory(directories: List<String>) {
         val path = directories.joinToString(separator = "/")
