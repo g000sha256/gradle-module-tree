@@ -22,8 +22,8 @@ plugins {
 
 ## Usage
 
-Define your directories and modules in the `settings.gradle.kts` file. They will be created and included after syncing
-the project:
+Define your directories and modules in the `settings.gradle.kts` file. They will be created and included on the next
+Gradle sync or build:
 
 ```kotlin
 include {
