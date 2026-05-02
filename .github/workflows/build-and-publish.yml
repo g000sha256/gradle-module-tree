@@ -32,7 +32,7 @@ jobs:
         run: ./gradlew assemble
 
       - name: Check binary compatibility
-        run: ./gradlew apiCheck
+        run: ./gradlew checkKotlinAbi
 
       - name: Publish
         env:
