@@ -76,8 +76,8 @@ publishing {
                 }
 
                 scm {
-                    connection = "scm:git:git://github.com/g000sha256/gradle-module-tree.git"
-                    developerConnection = "scm:git:git@github.com:g000sha256/gradle-module-tree.git"
+                    connection = "scm:git:https://github.com/g000sha256/gradle-module-tree.git"
+                    developerConnection = "scm:git:ssh://git@github.com/g000sha256/gradle-module-tree.git"
                     url = "https://github.com/g000sha256/gradle-module-tree"
                 }
 
