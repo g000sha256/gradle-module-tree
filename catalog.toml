@@ -1,5 +1,6 @@
 [versions]
 binaryCompatibilityValidator = "0.18.1"
+dokka = "2.2.0"
 kotlin = "2.3.21"
 sonatypeMavenCentral = "1.1.1"
 
@@ -9,4 +10,5 @@ gradle-javaGradlePlugin = { id = "org.gradle.java-gradle-plugin" }
 gradle-mavenPublish = { id = "org.gradle.maven-publish" }
 gradle-signing = { id = "org.gradle.signing" }
 jetBrains-binaryCompatibilityValidator = { id = "org.jetbrains.kotlinx.binary-compatibility-validator", version.ref = "binaryCompatibilityValidator" }
+jetBrains-dokka = { id = "org.jetbrains.dokka-javadoc", version.ref = "dokka" }
 jetBrains-kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }

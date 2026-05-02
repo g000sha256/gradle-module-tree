@@ -7,6 +7,7 @@ plugins {
     alias(notation = catalog.plugins.gradle.mavenPublish)
     alias(notation = catalog.plugins.gradle.signing)
     alias(notation = catalog.plugins.jetBrains.binaryCompatibilityValidator)
+    alias(notation = catalog.plugins.jetBrains.dokka)
     alias(notation = catalog.plugins.jetBrains.kotlin)
 }
 
@@ -29,6 +30,13 @@ dependencies {
     implementation(
         dependencyNotation = gradleApi(),
     )
+}
+
+tasks {
+    named<Jar>(name = "javadocJar") {
+        val taskProvider = named(name = "dokkaGeneratePublicationJavadoc")
+        from(taskProvider)
+    }
 }
 
 gradlePlugin {
