@@ -1,7 +1,7 @@
 [versions]
 dokka = "2.2.0"
 kotlin = "2.3.21"
-sonatypeMavenCentral = "1.1.1"
+sonatypeMavenCentral = "2.0.0"
 
 [plugins]
 g000sha256-sonatypeMavenCentral = { id = "dev.g000sha256.sonatype-maven-central", version.ref = "sonatypeMavenCentral" }

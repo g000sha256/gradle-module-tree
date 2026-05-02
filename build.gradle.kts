@@ -98,13 +98,6 @@ signing {
     sign(publishing.publications)
 }
 
-sonatypeMavenCentralRepository {
-    credentials {
-        username = getProperty(key = "SonatypeMavenCentral.Username") ?: getEnvironment(key = "SONATYPE_USERNAME")
-        password = getProperty(key = "SonatypeMavenCentral.Password") ?: getEnvironment(key = "SONATYPE_PASSWORD")
-    }
-}
-
 private fun getProperty(key: String): String? {
     return properties.get(key = key) as String?
 }
