@@ -20,7 +20,7 @@ package dev.g000sha256.gradle_module_tree
  * A DSL builder for defining hierarchical module structures in Gradle multi-module projects.
  *
  * This interface provides methods to define modules and directories in a tree-like structure,
- * automatically creating the directories and including modules in the Gradle build.
+ * automatically creating directories and including modules in the Gradle build.
  *
  * Example usage in `settings.gradle.kts`:
  * ```kotlin
@@ -30,7 +30,7 @@ package dev.g000sha256.gradle_module_tree
  *         module(name = "ui")
  *         module(name = "util")
  *     }
- *     directory(name = "feature") {
+ *     directory(name = "features") {
  *         module(name = "home")
  *         module(name = "profile")
  *     }
@@ -42,8 +42,8 @@ public interface IncludesBuilder {
     /**
      * Creates a directory and applies the given builder block to define submodules and subdirectories.
      *
-     * This method creates a directory with the given name and provides
-     * a nested scope for defining submodules and subdirectories within it.
+     * Unlike [module], this only creates a directory on disk and does not register a Gradle module;
+     * it serves as a logical grouping for nested modules and directories.
      *
      * @param name the name of the directory to create
      * @param builder a lambda that defines the contents of this directory
@@ -54,7 +54,7 @@ public interface IncludesBuilder {
      * Creates a Gradle module with the given name.
      *
      * This method creates a directory for the module and includes it in the
-     * Gradle build using the project path syntax (e.g., `:core:ui`).
+     * Gradle build using the project path syntax (e.g., `:app` or `:core:ui` for nested modules).
      *
      * @param name the name of the module to create and include
      */

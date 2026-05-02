@@ -20,6 +20,16 @@ import java.io.File
 import org.gradle.api.Plugin
 import org.gradle.api.initialization.Settings
 
+/**
+ * A Gradle settings plugin that registers the `include` extension on [Settings],
+ * providing a hierarchical DSL for defining modules and directories.
+ *
+ * Apply this plugin in `settings.gradle.kts` and use the `include { ... }` block to
+ * define your module hierarchy. Directories are created on disk relative to the project root,
+ * and modules are added to the Gradle build.
+ *
+ * @see IncludesBuilder
+ */
 public class ModuleTreePlugin : Plugin<Settings> {
 
     override fun apply(target: Settings) {
