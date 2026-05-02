@@ -32,12 +32,6 @@ kotlin {
     }
 }
 
-dependencies {
-    implementation(
-        dependencyNotation = gradleApi(),
-    )
-}
-
 tasks {
     named<Jar>(name = "javadocJar") {
         val taskProvider = named(name = "dokkaGeneratePublicationJavadoc")
