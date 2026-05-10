@@ -91,17 +91,5 @@ publishing {
 }
 
 signing {
-    val key = getProperty(key = "Signing.Key") ?: getEnvironment(key = "SIGNING_KEY")
-    val password = getProperty(key = "Signing.Password") ?: getEnvironment(key = "SIGNING_PASSWORD")
-    useInMemoryPgpKeys(key, password)
-
     sign(publishing.publications)
-}
-
-private fun getProperty(key: String): String? {
-    return properties.get(key = key) as String?
-}
-
-private fun getEnvironment(key: String): String? {
-    return System.getenv(key)
 }
